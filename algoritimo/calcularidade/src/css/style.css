@@ -26,6 +26,7 @@ body.white{
     --secondary: #666fb6;
     --text1: #000;
     --text2: #fff;
+    transition: 1s ease-in-out;
 
 }
 body.nigth{
@@ -37,6 +38,12 @@ body.nigth{
 }
 body.nigth button ,body.nigth input {
     color: var(--text1);
+    transition: 1s ease-in-out;
+}
+body.nigth .btnswitch{
+    background-color: #4bd0cc;
+    transition: 1s ease-in-out;
+
 }
 
   .wrap {
@@ -122,10 +129,11 @@ body.nigth button ,body.nigth input {
     top: 0;
     bottom: 0;
     right: 0;
-    background: #000;
+    background: #160921;
     border-radius: 99px;
     padding: 10px;
     cursor: pointer;
+    transition: 1s ease-in-out;
   }
   
   .knob {
