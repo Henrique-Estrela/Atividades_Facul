@@ -14,6 +14,7 @@ body {
     color: var(--text2);
     margin: 0;
     padding: 0;
+    transition: 1s ease-in-out;
 }
 ::selection{
 background-color: var(--secondary);
@@ -25,12 +26,17 @@ body.white{
     --secondary: #666fb6;
     --text1: #000;
     --text2: #fff;
+
 }
 body.nigth{
     --primary: #050105;
     --secondary: #f8f832;
     --text1: #000;
     --text2: #fff;
+    transition: 1s ease-in-out;
+}
+body.nigth button ,body.nigth input {
+    color: var(--text1);
 }
 
   .wrap {
@@ -96,9 +102,95 @@ body.nigth{
           transform: translateX(50%) translateZ(0) scaleY(1)
       }
   }
+
+
+
+  
+.btnContainer {
+    width: 320px;
+    height: 160px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+  }
+  
+  .btnswitch {
+    width: 4rem;
+    height: 1.2rem;
+    margin: 1rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    border-radius: 99px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .knob {
+    width: 70px;
+    height: 70;
+    position: relative;
+  }
+  
+  .top {
+    background-color: #827d96;
+    border-radius: 999px;
+    position: absolute;
+    left: -6px;
+    width: 2rem;
+    height: 2rem;
+    right: 0px;
+    top: -6px;
+    bottom: 0;
+  }
+  
+  .light {
+    border-radius: 999px;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+  
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #4cc3e2 10.42%,
+      rgba(94, 199, 227, 0.791579) 27.08%,
+      rgba(113, 204, 229, 0.35) 45.31%,
+      rgba(144, 213, 231, 0.11) 65.1%,
+      rgba(158, 216, 231, 0.02) 78.12%,
+      rgba(177, 221, 233, 0) 95.83%
+    );
+    left: 9px;
+    top: 9px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .hidden {
+    visibility: hidden;
+  }
+  
+  svg {
+    position: absolute;
+    bottom: 200px;
+    right: 0;
+    top: 15%;
+  }
+  
+  .no-highlight {
+    /* bad for accessibility - please don't use this in real world applications */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
   
   
-section, h1.title, .form, .form ul, .form li {
+  
+section, h1.title, .form, .form ul, .form li, footer {
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -110,7 +202,7 @@ section, h1.title, .form, .form ul, .form li {
     z-index: 100;
 }
 
-.conteiner{
+.conteiner, footer{
     width: 70vw;
     height: 70vh;
     background: rgba( 255, 255, 255, 0.25 );
@@ -173,4 +265,17 @@ input[type="date"]{
     font-size: 2em;
     color: var(--text2);
     text-align: center;
+}
+
+
+footer{
+    width: 17rem;
+    height: 2rem;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+footer a{
+    color: var(--secondary);
+    font-size: 1.2em;    
 }
