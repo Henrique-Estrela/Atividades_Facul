@@ -169,16 +169,8 @@ body.nigth{
       opacity: 1;
       transform: translateX(0%);
     }
-  }
-  
-  /* QUANDO CLICAR NO BOTÃO SUMIR COM O FORM */
-  
-  .form-hide {
-    animation: down 0.5s;
-    animation-fill-mode: forwards;/*diz para o elemeto ficar em sua posição final após a animação*/
-    animation-timing-fuction: ease-in;/* sainda devagar e chegadda rápida*/
-  }
-  
+  }  
+ 
   @keyframes down {
     from {
       transform: translateY(0);
