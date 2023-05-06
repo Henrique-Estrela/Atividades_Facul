@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icone -->
+    <link rel="icon" href="src/img/icon.png" type="icon/image">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+
+    <!-- Mask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"  referrerpolicy="no-referrer"></script>
+
+    <title>Calcular Imposto</title>
+</head>
+<body class="">
+    <section class="form-section">
+        <h1>Calcular Impostos</h1>
+  
+        <div class="form-wrapper">
+          <form>
+            <div class="input-block">
+              <label for="produto">valor do produto (R$)</label>
+              <input type="number" name="produto" id="produto" class="produto" placeholder="Digite o valor do produto..." required/>
+            </div>
+
+            <button class="btn-calcular">Calcular</button>
+            
+            
+            <div class="calcular-fild">
+              <div class="input-block">
+                <label for="imposto">Valor do Imposto (R$)</label>
+                <input type="text" name="imposto" id="imposto" placeholder="R$ 00,00" disabled/>
+              </div>
+  
+              <div class="input-block">
+                  <label for="final">Valor do final (R$)</label>
+                  <input type="text" name="final" id="final" placeholder="R$ 00,00" disabled/>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+  
+  <ul class="squares"></ul>
+
+    <script src="src/js/index.js"></script>
+
+  
+</body>
+</html>

@@ -19,6 +19,10 @@ btncalcular.addEventListener("click", event => {
   //para continuar animando msm apos um clique, em seguida faça:
   const formError = document.querySelector(".validate-error");
 
+  
+
+  
+
   if (formError) {
     formError.addEventListener("animationend", event => {
       if (event.animationName === "nono") {
@@ -26,20 +30,10 @@ btncalcular.addEventListener("click", event => {
       }
     });
   } else {
-    var txtproduto = document.querySelector("#produto");
-    var txtimposto = document.querySelector("#imposto");
-    var txttotalproduto = document.querySelector("#final");
-    var btncalcular = document.querySelector(".btn-calcular");
 
 
-    // Processamento dos dados
-    var produto = Number(txtproduto.value);
-    var imposto = produto * 60 / 100;
-    var totalproduto = produto + imposto;
 
-    // Escrita do resultado no DOM do HTML
-    txtimposto.value = imposto.toFixed(2).replace('.', ',');
-    txttotalproduto.value = totalproduto.toFixed(2).replace('.', ',');
+
   }// 2 - FIM
 });// 1 - FIM
 
