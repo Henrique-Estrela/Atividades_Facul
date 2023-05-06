@@ -1,12 +1,12 @@
 :root{
     /* cores */
 
-    --primary: #1c0021;
-    --secondary: #66b6ab;
+    --primary: #1a0b2a;
+    --secondary: #261329;
+    --tertiary: #d9d9db;
     --text1: #000;
     --text2: #fff;
 }
-
 
 
 body {
@@ -16,161 +16,225 @@ body {
     padding: 0;
 }
 ::selection{
-background-color: var(--secondary);
+background-color: var(--tertiary);
 color: var(--text1);
 }
 
-body.white{
-    --primary: #4bd0cc;
-    --secondary: #666fb6;
-    --text1: #000;
-    --text2: #fff;
-}
 body.nigth{
     --primary: #050105;
     --secondary: #f8f832;
     --text1: #000;
     --text2: #fff;
 }
-
-  .wrap {
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    height: 100px;
-  }
-  .wrap2{
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    margin: auto;
-    height: 100px;
-    transform: rotate(180deg); 
-}
-  
-  .wave {
-    position: absolute;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background-repeat: repeat no-repeat;
-    background-position: 0 bottom;
-    transform-origin: center bottom;
-  }
-  .waveTop {
-    background-size: 50% 100px;
-    background-image: url(http://bestwebcreator.com/cryptocash/demo/assets/images/wave.png);
-    animation: move_wave_reverse 10s linear infinite;
-    right: 0;
-    left: auto;
-  }
-  .waveMiddle {
-    background-size: 50% 100px;
-    background-image: url(http://bestwebcreator.com/cryptocash/demo/assets/images/wave.png);
-    animation: move_wave 10s linear infinite;
-  }
-  @keyframes move_wave {
-      0% {
-          transform: translateX(0) translateZ(0)
-      }
-      50% {
-          transform: translateX(-25%) translateZ(0)
-      }
-      100% {
-          transform: translateX(-50%) translateZ(0)
-      }
-  }
-  @keyframes move_wave_reverse {
-      0% {
-          transform: translateX(0) translateZ(0) scaleY(1)
-      }
-      50% {
-          transform: translateX(25%) translateZ(0) scaleY(0.55)
-      }
-      100% {
-          transform: translateX(50%) translateZ(0) scaleY(1)
-      }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   
+  html,
+  body {
+    height: 100vh;
+  }
   
-section, h1.title, .form, .form ul, .form li {
+  body {
+    background-image: radial-gradient(ellipse at center,var(--tertiary) 10%,var(--secondary)  30%,var(--primary) 100%);
+    background-color: var(--primary);
+    font-family: Roboto, Arial, sans-serif;
+  }
+  
+  section ,form .btn-calcular{
+    display: flex;
     flex-direction: column;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: center;  
-}
-
-.title{
-    font-size: 4em;
-    z-index: 100;
-}
-
-.conteiner{
-    width: 70vw;
-    height: 70vh;
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-}
-
-label{
-    align-items: center;
-    font-size: 2.5em;
-    margin-bottom: 1rem;
-    color: var(--secondary);
-}
-.form li{
-    padding: 1.5rem;
-}
-li ,ul ,a{
-    list-style: none;
-    text-decoration: none;
-}
-
-
-input[type="date"]{
-    background-color: var(--secondary);
-    padding: 17px 35px;
-    font-family: "Roboto Mono",monospace;
+  }
+  
+  h1 {
+    font-size: 5em;
+    letter-spacing: 1px;
+    margin: 20px 0;
     color: var(--text2);
-    font-size: 20px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-}
-::-webkit-calendar-picker-indicator{
+  }
+  
+  form {
+    margin: 20px 0;
+    width: 60vw;
+    height: 35rem;
     background-color: var(--text2);
+    padding: 30px 80px;
+    border-radius: 5px;
+  }
+  
+  form .input-block {
+    margin-bottom: 20px;
+  }
+  
+  form .input-block label {
+    font-size: 2em;
+    color: var(--primary);
+  }
+  
+  form .input-block input {
+    width: 100%;
+    height: 3rem;
+    display: block;
+    margin-top: 1rem;
+    padding: 7px;
+    font-size: 1.5em;
+    color: var(--primary);
+    border-radius: 5px;
+    border: 1px solid #ccddef;
+    outline-color: var(--primary);
+}
+  form .calcular-fild {
     display: flex;
-    position: relative;
-    margin-right: 2rem;
-    right: -3rem;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 1.3em;
-    border-radius: 3px;
-}
-.btn{
+    margin-top: 7rem;
+    gap: 8rem;
+  }
+  
+  
+  form .btn-calcular {
     width: 20vw;
-    height: 4rem;
-    border-radius: 3px;
-    background-color: var(--secondary);
-    font-family: "Roboto Mono",monospace;
-    font-size: 2em;
+    height: 3rem;
+    border: none;
+    background-color: var(--primary);
     color: var(--text2);
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    cursor: pointer;
-}
+    border-radius: 25px;
+    font-size: 2em;
+    margin: auto;
+    padding: 7px;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+  
+  
+  /* APARIÇÃO DO FORM */
+  
+  form {
+    animation-name: fade;
+    animation-duration: 0.5s;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      trandform: scale(1);
+    }
+  }
+  
+  /* APARIÇÃO DOS CAMPOS DA ESQUERDA PARA A DIREITA */
+  
+  form {
+    overflow: hidden; /* para que os campos não apareçam fora do form */
+  }
+  
+  form .input-block:nth-child(1) { /* :nth-child(1) - referencia o primeito filho, sem esta propriedade morerá o block inteiro */
+    animation-name: move;
+    animation-duration: 0.5s;
+  }
+  
+  form .input-block:nth-child(2) {
+    animation-name: move;
+    animation-duration: 0.4s;
+    animation-delay: 0.1s;
+    animation-fill-mode: backwards; /* trabalha no momento em que não está acontecendo a animação - espera do delay*/
+  }
 
-#resultado{
-    font-size: 2em;
-    color: var(--text2);
-    text-align: center;
-}
+  form .input-block:nth-child(3) {
+    animation-name: move;
+    animation-duration: 0.4s;
+    animation-delay: 0.1s;
+    animation-fill-mode: backwards; /* trabalha no momento em que não está acontecendo a animação - espera do delay*/
+  }
+  
+  
+  form .btn-calcular {
+    animation-name: move;
+    animation-duration: 0.4s;
+    animation-delay: 0.25s;
+    animation-fill-mode: backwards;
+  }
+  
+  @keyframes move {
+    from {
+      opacity: 0;
+      transform: translateX(-35%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  
+  /* QUANDO CLICAR NO BOTÃO SUMIR COM O FORM */
+  
+  .form-hide {
+    animation: down 0.5s;
+    animation-fill-mode: forwards;/*diz para o elemeto ficar em sua posição final após a animação*/
+    animation-timing-fuction: ease-in;/* sainda devagar e chegadda rápida*/
+  }
+  
+  @keyframes down {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100vh);
+    }
+  }
+  
+  /* FORM NO-NO */
+  
+  form.validate-error {
+    animation: nono 200ms linear, fade paused;
+    /* animation-play-state: paused; */
+    animation-iteration-count: 2;
+  }
+  
+  @keyframes nono {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    35% {
+      transform: translateX(-15%);
+    }
+    70% {
+      transform: translateX(15%);
+    }
+  }
+  
+  /* SQUARES */
+  body {
+    overflow: hidden; /* para não aparecer a rolagem */
+  }
+  
+  .squares li {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.20);
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    animation: up 2s infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes up {
+    from{
+      opacity: 0;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-800px) rotate(960deg);
+    }
+  }
