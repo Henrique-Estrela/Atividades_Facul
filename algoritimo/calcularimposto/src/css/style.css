@@ -109,7 +109,6 @@ body.nigth{
   }
   
   
-  /* APARIÇÃO DO FORM */
   
   form {
     animation-name: fade;
@@ -127,13 +126,12 @@ body.nigth{
     }
   }
   
-  /* APARIÇÃO DOS CAMPOS DA ESQUERDA PARA A DIREITA */
   
   form {
-    overflow: hidden; /* para que os campos não apareçam fora do form */
+    overflow: hidden; 
   }
   
-  form .input-block:nth-child(1) { /* :nth-child(1) - referencia o primeito filho, sem esta propriedade morerá o block inteiro */
+  form .input-block:nth-child(1) { 
     animation-name: move;
     animation-duration: 0.5s;
   }
@@ -142,14 +140,14 @@ body.nigth{
     animation-name: move;
     animation-duration: 0.4s;
     animation-delay: 0.1s;
-    animation-fill-mode: backwards; /* trabalha no momento em que não está acontecendo a animação - espera do delay*/
+    animation-fill-mode: backwards; 
   }
 
   form .input-block:nth-child(3) {
     animation-name: move;
     animation-duration: 0.4s;
     animation-delay: 0.1s;
-    animation-fill-mode: backwards; /* trabalha no momento em que não está acontecendo a animação - espera do delay*/
+    animation-fill-mode: backwards; 
   }
   
   
@@ -180,7 +178,6 @@ body.nigth{
     }
   }
   
-  /* FORM NO-NO */
   
   form.validate-error {
     animation: nono 200ms linear, fade paused;
@@ -201,9 +198,10 @@ body.nigth{
     }
   }
   
-  /* SQUARES */
+  /* SQUARES */ 
+
   body {
-    overflow: hidden; /* para não aparecer a rolagem */
+    overflow: hidden; 
   }
   
   .squares li {

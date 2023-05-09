@@ -1,6 +1,6 @@
 var btn = document.querySelector(".btn");
 var datenasc = document.querySelector("#data");
-var result = document.querySelector("#resultado")
+var result = document.querySelector("#resultado");
 
 function getAge(data) {
     const dataatual = new Date();
