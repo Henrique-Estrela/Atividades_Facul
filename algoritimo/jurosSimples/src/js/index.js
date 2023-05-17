@@ -1,97 +1,31 @@
-// 1 - Quando clicar em calcular, fazer o formulário sair da tela, indo para baixo
-const btncalcular = document.querySelector(".btn-calcular");
-const form = document.querySelector("form");
+  const btn = document.querySelector(".btn");
+
+  btn.addEventListener("click", function(){
+    var a = Number(document.querySelector("#numberA").value);
+    var b = Number(document.querySelector("#numberB").value);
+    var c = Number(document.querySelector("#numberC").value);
+    var Resultado = document.querySelector('#resposta');
+    var raizmain = {
+      raiz1: 0 ,
+      raiz2: 0,
+      raiz: 0
+    }
+    var delta = (b * b) - 4 * a * c;
 
 
-
-// ouve eventos clique
-btncalcular.addEventListener("click", event => {
+    if (!a && !b && !c) {
+      Resultado.innerHTML = 'Insira os valores de a, b e c';
+    } else if (delta == 0) {
+      raizmain.raiz = (-b + Math.sqrt(delta)) / (2 * a);
+      Resultado.innerHTML = "Raiz dupla: " + raizmain.raiz.toFixed(1);
+    } else if (delta < 0) {
+      Resultado.innerHTML = 'Sem raízes reais';
+    } else {
+      raizmain.raiz1 = (-b + Math.sqrt(delta)) / (2 * a);
+      raizmain.raiz2 = (-b - Math.sqrt(delta)) / (2 * a);
+      Resultado.innerHTML = "Raiz 1: " + Number(raizmain.raiz1.toFixed(1)) + "<br/>" + "Raiz 2: " + Number(raizmain.raiz2.toFixed(1));
+    }
   
-  event.preventDefault();
-
-  // 2 - Fazer o formulário dizer não-não (vibrar) caso haja campos vazios.
-  const fields = [...document.querySelectorAll(".input-block input.produto")];// procura os campos
-
-  fields.forEach(field => {
-    if (field.value === "") form.classList.add("validate-error");
-  });// se em cada campo que olhar um deles estiver vazio add ao form inteiro que esta com erro
-
-  //para continuar animando msm apos um clique, em seguida faça:
-  const formError = document.querySelector(".validate-error");
+  })
 
   
-
-  
-
-  if (formError) {
-    formError.addEventListener("animationend", event => {
-      if (event.animationName === "nono") {
-        formError.classList.remove("validate-error");
-      }
-    });
-  } else {
-
-
-
-
-  }// 2 - FIM
-});// 1 - FIM
-
-
-
-// 3 - Fazendo a rolagem não aparecer e sumindo realmente com a animação
-
-//Condição para quando inicia a animação
-form.addEventListener("animationstart", event => {
-  if (event.animationName === "down") {
-    document.querySelector("body").style.overflow = "hidden";
-  }
-});
-
-//Condição para quando termina a animação
-form.addEventListener("animationend", event => {
-  if (event.animationName === "down") { //if - esta especificando qual das animações deve ser ouvida para então executar
-    form.style.display = "none";
-    document.querySelector("body").style.overflow = "none";
-    //retornando o overflow
-  }
-});// 3 - FIM
-
-
-
-// 4 - Background Squares
-const ulSquares = document.querySelector("ul.squares");
-
-for(let i = 0; i < 11; i++){
-  
-  // Estilização
-  const random = (min, max) => Math.random() * (max - min) + min; // criando tam randomicos - evitando a repetição no cod
-  
-  const li = document.createElement("li");
-    
-  const size = Math.floor(random(10, 120)); 
-  
-  const position = random(1, 99);
-    
-  li.style.width = `${size}px`;
-  li.style.height = `${size}px`;
-  li.style.bottom = `-${size}px`;
-  
-  li.style.left = `${position}%`;
-  
-  
-  // Animação
-  const delay = random(0.1, 5);
-  const duration = random(24, 12);
-  
-  li.style.animationDelay = `${delay}s`;
-  li.style.animationDuration = `${duration}s`;
-  li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`; // cada li ficará com o tempo diferente uma da outra
-  
-  // criando li's
-  ulSquares.appendChild(li);
-  
-}
-
-
-

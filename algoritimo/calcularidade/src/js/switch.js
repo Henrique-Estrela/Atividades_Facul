@@ -41,7 +41,6 @@
 
             var body = document.querySelector("body");
             body.classList.toggle("nigth")
-
         }
 
         const btn2 = document.getElementById("btn2");

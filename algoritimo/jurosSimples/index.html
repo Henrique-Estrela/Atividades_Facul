@@ -13,38 +13,43 @@
     <link rel="stylesheet" href="src/css/responsive.css">
 
     
-    <title>Calcular Juros Simples</title>
+    <title>Calcular Equação </title>
 </head>
 <body class="">
-    <section class="form-section">
-        <h1>Calcular Impostos</h1>
-  
-        <div class="form-wrapper">
-          <form>
-            <div class="input-block">
-              <label for="produto">valor do produto (R$)</label>
-              <input type="number" name="produto" id="produto" class="produto" placeholder="Digite o valor do produto..." required/>
-            </div>
+    <section class="container">
+      <div class="title">
+        <h1>Equação do 2º grau</h1>
+      </div>
+      <div >
+        <p>Exemplo: <Span>ax² + bx + c</Span></p>
 
-            <button class="btn-calcular">Calcular</button>
-            
-            
-            <div class="calcular-fild">
-              <div class="input-block">
-                <label for="imposto">Valor do Imposto (R$)</label>
-                <input type="text" name="imposto" id="imposto" placeholder="R$ 00,00" disabled/>
-              </div>
-  
-              <div class="input-block">
-                  <label for="final">Valor do final (R$)</label>
-                  <input type="text" name="final" id="final" placeholder="R$ 00,00" disabled/>
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
-  
-  <ul class="squares"></ul>
+        <ul>
+          <li class="number">
+            <span>A</span> 
+            <input type="number" name="numberA" id="numberA" placeholder="Valor de A...">
+          </li>
+          <li class="number">
+            <span>B</span>
+            <input type="number" name="numberB" id="numberB" placeholder="Valor de B...">
+
+          </li>
+          <li class="number">
+            <span>C</span>
+            <input type="number" name="numberC" id="numberC" placeholder="Valor de C...">
+
+          </li>
+        </ul>
+      </div>
+      <div>
+        <button class="btn">Calcular</button>
+      </div>
+
+      <div class="result">
+        <span>Resultado</span>
+        <span id="resposta"></span>
+      </div>
+
+    </section>
 
     <script src="src/js/index.js"></script>
 
