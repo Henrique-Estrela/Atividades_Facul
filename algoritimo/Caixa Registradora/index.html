@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icone -->
+    <link rel="icon" href="src/img/icon.png" type="icon/image">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+    
+    <!-- Sweet alert -->
+
+    <title>Caixa Registradora</title>
+</head>
+<body class="">
+    
+    <div class="area" >
+        <ul class="gran">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+        
+    </div >
+    <div class="area1">
+        <ul class="square">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <h1 class="title">Caixa Registradora</h1>
+    <section>
+        <div class="container">
+            
+            <div>
+                <div>
+                    <span>Valor do produto R$</span><br>
+                    <input type="number" id="txtvalorproduto" placeholder="R$ 0,00" required>
+                </div>
+                <button class="btn">Adicionar Produto</button>
+
+            </div>
+            <div>
+                <div class="valor">
+                    <p>
+                        Total da Compra R$<br>
+                        <input type="number" id="txttotalcompra" placeholder="R$ 0,00" disabled>
+                    </p>
+                    <p>
+                        Dinheiro R$<br><input type="number" id="txtdinheiro" placeholder="R$ 0,00">
+                    </p>
+                    
+                </div>
+                <button class="btn2">Calcular Troco</button>
+            </div>
+
+
+        </div>
+        <div class="result">
+            <div class="table">
+                <table id="tableprodutos">
+                    <tr>
+                        <td>
+                            <h1>Item</h1> 
+                        </td>
+                        <td>
+                            <h1>Valor</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+
+            <div class="troco">
+                <span>Troco R$</span><br>
+                <input type="text" id="txttroco" placeholder="R$ 0,00" disabled>
+            </div>  
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer">&copy; 2023 -  Developed By <a href="https://henrique-estrela.github.io/Portifolio/">Henrique Estrla</a></div>
+    </footer>
+
+    <script src="src/js/sweet.js"></script>
+    <script src="src/js/index.js"></script>
+
+</body>
+</html>
