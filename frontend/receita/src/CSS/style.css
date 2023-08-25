@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Martian Mono', monospace;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Permanent Marker', cursive;
+}
+
+:root{   
+    
+    /* Colors */
+
+    --color1: #ecc052;
+    --color2: #f4d895;
+    --color3: #7b1a41;
+    --color4: #a56382;
+    --color5: #d9a7c2;
+    --color6: #e2b1cb;
+    --color7: #ffffff;
+
+
+
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--color3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:var(--color4); 
+}
+
+::selection{
+    background-color: var(--color6);
+    color: var(--color3);
+}
+
+.preload{
+    width: 50rem;
+    height: 50rem;
+    margin-top: -6rem;
+    overflow: hidden;
+    background: var(--color7);
+    background-image: url(../IMG/load.gif);
+    background-position: center;
+    background-size: contain;
+    animation: load 2s infinite linear;
+}
+
+.telaload{
+    width: 100%;
+    height: 100%;
+    background: var(--color7);
+    position: absolute;
+    overflow: hidden;
+    z-index: 1000;
+}
+.container{
+    display: none;
+}
+
+.center, div.title, .abareceita, .receita, .modo, h2, footer, .telaload, .ingredientes ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ul, li, a{
+    text-decoration: none;
+    list-style: none;
+    color: unset;
+}
+
+nav{
+    width: 100%;
+    height: 6rem;
+    font-size: 2em;
+    background-color: var(--color3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3; 
+}
+
+nav img{
+    width: 3rem;
+}
+
+nav div a, nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+    color: var(--color7);
+    gap: 1rem;
+    z-index: 3; 
+}
+
+nav ul{
+    gap: 3rem;
+}
+
+nav ul a:hover{
+    color: var(--color2);
+    transition: 0.2s ease-in-out;
+}
+
+main{
+  background-color: var(--color5);  
+}
+
+main .title{
+    display: flex;
+    padding-top: 3rem;
+    font-size: 2em;    
+}
+
+main .title h1{
+    z-index: 2;
+    color: var(--color3);
+}
+
+main .title img{
+    width: 50rem;
+    position: absolute;
+    z-index: 1;
+    padding-top: 2rem;
+}
+
+.imgdecorativa{
+    width: 30rem;
+    border-radius: 7px;
+}
+
+.abareceita{
+    margin-top: 6rem;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 94vw;
+    height: 25rem;
+    background-color: #ffffff80;
+    border-radius: 8px;
+    font-size: 2em;
+    z-index: 3;
+}
+
+.ingredientes h2{
+    margin-bottom: 1.5rem;
+}
+
+.ingredientes ul li{
+    padding: 0.5rem;
+    flex-direction: row;
+    justify-content: unset;
+    gap: 2rem;
+}
+
+.ingredientes ul li img{
+ width: 3rem;
+}
+
+.receita img.imgmodo{
+    width: 18rem;
+    position: absolute;
+    right: 13rem;
+    margin-top: 4rem;
+    transform: scaleX(-1);
+}
+
+.modo{
+    margin-top: 6rem;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90vw;
+    height: 25rem;
+    background-color: #ffffff80;
+    border-radius: 8px;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 4rem;
+}
+
+.modo h2{
+    font-size: 2em;
+}
+
+footer{
+    width: 100%;
+    height: 4rem;
+    background-color: var(--color3);
+    color: var(--color7);
+    font-size: 1.2em;
+}
+
+footer a{
+    font-size: 1.3em;
+}
+
+footer a:hover{
+    color: var(--color1);
+    transition: all 0.4s;
+}
