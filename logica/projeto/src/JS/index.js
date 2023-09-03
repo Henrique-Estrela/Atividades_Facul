@@ -1,4 +1,6 @@
 function loading() {
-    document.querySelector('.loading').style.display = "nome";
-    document.querySelector('.container').style.display = "block";
+    document.querySelector(".telaload").style.display = "none";
+    document.querySelector(".container").style.display = "block";
 }
+
+

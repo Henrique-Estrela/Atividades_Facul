@@ -10,6 +10,8 @@
 
     <!-- JS -->
     <script src="src/JS/index.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
@@ -19,20 +21,23 @@
 
 </head>
 <body onload="loading()">
-    <Section class="loading">
-        <div class="preloader"></div>
-    </Section>
+    <div class="telaload">
+        <div class="preload"></div>
+    </div>
     <section class="container">
+        <header class="header">
+            <h1 class="glitched"> Converção de Tabela Verdade</h1>
+        </header>
 
-        <h1>Converção de Tabela Verdade</h1>
-
-        <div class="operation">
-            <div id="tableoperation">
+        <div>
+            <div class="operation neon">
+                <p>XDXDXD</p>
                 <div class="make">
                     <i class="fa fa-search"></i>
                 </div>
             </div>
         </div>
+        
 
         <div class="select">
             <div class="var">
@@ -47,12 +52,12 @@
 
                 <div>
                     <ul>
-                        <li><button>⊕</button></li>
-                        <li><button>ʌ</button></li>
-                        <li><button>ᴠ</button></li>
-                        <li><button>→</button></li>
-                        <li><button>~</button></li>
-                        <li><button>↔</button></li>
+                        <li><button class="btn">⊕</button></li>
+                        <li><button class="btn">ʌ</button></li>
+                        <li><button class="btn">ᴠ</button></li>
+                        <li><button class="btn">→</button></li>
+                        <li><button class="btn">~</button></li>
+                        <li><button class="btn">↔</button></li>
                     </ul>
                 </div>
             </div>
@@ -67,7 +72,11 @@
         <footer>
             <p>&copy; Todos os direitos reservados para <a href="">Henrique Estrela</a></p>
         </footer>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/yii22BqKk_s?si=wAJ7Tw973oebVtjm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><iframe width="560" height="315" src="https://www.youtube.com/embed/yii22BqKk_s?si=wAJ7Tw973oebVtjm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><iframe width="560" height="315" src="https://www.youtube.com/embed/yii22BqKk_s?si=wAJ7Tw973oebVtjm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><iframe width="560" height="315" src="https://www.youtube.com/embed/yii22BqKk_s?si=wAJ7Tw973oebVtjm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><iframe width="560" height="315" src="https://www.youtube.com/embed/yii22BqKk_s?si=wAJ7Tw973oebVtjm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><iframe width="560" height="315" src="https://www.youtube.com/embed/yii22BqKk_s?si=wAJ7Tw973oebVtjm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </section>
+    <script> 
+        $("header").append("<div class='glitch-window'></div>");
+        $( "h1.glitched" ).clone().appendTo( ".glitch-window" );
+    </script>
+
 </body>
 </html>

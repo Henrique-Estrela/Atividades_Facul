@@ -1,5 +1,10 @@
 @import "responsive.css";
 
+/* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+   +-             Configs                +- 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+*/
+
 :root{
     --Color1:#c501e2;
     --Color2:#020202;
@@ -12,10 +17,29 @@
     padding: 0;
 }
 
+ul, li , a{
+    list-style: none;
+    text-decoration: none;
+    color: unset;
+}
+
 body{
     background-color: var(--Color3);
     color: var(--Color1);
 }
+
+.telaload, section div, footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+   +-         Style Scrollbar            +- 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+*/
+
 
 ::-webkit-scrollbar{
     width: 5px;
@@ -34,26 +58,158 @@ body{
     color: var(--Color2);
 }
 
-.loading{
-    width: 50rem;
-    height: 50rem;
+
+/* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+   +-             Loading                +- 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+*/
+
+
+.preload{
+    width: 20rem;
+    height: 20rem;
     margin-top: -6rem;
     overflow: hidden;
-    background: var(--color3);
     background-image: url(../IMG/load.gif);
     background-position: center;
     background-size: contain;
     animation: load 2s infinite linear;
 }
 
-.preload{
+.telaload{
     width: 100%;
     height: 100%;
-    background: var(--color3);
+    background: var(--Color3);
     position: absolute;
     overflow: hidden;
     z-index: 1000;
 }
+
 .container{
     display: none;
+}
+
+
+
+/* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+   +-              Titulo                +- 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+*/
+
+h1 {
+    font-size: 5em;
+    color: var(--Color1);
+    text-align: center;
+    margin: 3rem;
+}
+
+.glitch-window {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 100%;
+    color: var(--Color1);
+    text-shadow: 2px 0 var(--Color4), -1px 0 var(--Color1), -2px 0 green;
+    overflow: hidden;
+    animation: crt-me 3000ms infinite linear alternate-reverse;
+}
+
+@keyframes crt-me {
+    0% {
+        clip: rect(31px, 9999px, 94px, 0);
+   }
+    10% {
+        clip: rect(112px, 9999px, 76px, 0);
+   }
+    20% {
+        clip: rect(85px, 9999px, 77px, 0);
+   }
+    30% {
+        clip: rect(27px, 9999px, 97px, 0);
+   }
+    40% {
+        clip: rect(64px, 9999px, 98px, 0);
+   }
+    50% {
+        clip: rect(61px, 9999px, 85px, 0);
+   }
+    60% {
+        clip: rect(99px, 9999px, 114px, 0);
+   }
+    70% {
+        clip: rect(34px, 9999px, 115px, 0);
+   }
+    80% {
+        clip: rect(98px, 9999px, 129px, 0);
+   }
+    90% {
+        clip: rect(43px, 9999px, 96px, 0);
+   }
+    100% {
+        clip: rect(82px, 9999px, 64px, 0);
+   }
+}
+
+
+/* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+   +-              Equação               +- 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+*/
+
+.operation{
+    width: 55vw;
+    height: 4rem;
+    margin: 4rem;
+    font-size: 2.5em;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: var(--Color2);
+    overflow: hidden;
+}
+
+.neon {
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    box-shadow:
+      0 0 .3rem #fff,
+      inset 0 0 .3rem #fff,
+      0 0 1rem var(--Color1),
+      inset 0 0 1rem var(--Color1),
+      0 0 1rem var(--Color1),
+      inset 0 0 1rem var(--Color1);        
+}  
+
+.neon::-moz-selection, .neon::selection {
+    background-color: var(--Color1);  
+}
+
+.neon:focus {
+    outline: none;
+}
+
+
+.make{
+    margin-right: -2rem;
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--Color4);
+    margin-left: 3rem;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.btn:hover, .btn:focus, .btn:active {
+    transform: translate(-50%, -10%);
 }
