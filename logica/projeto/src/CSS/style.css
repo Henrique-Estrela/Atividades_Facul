@@ -1,7 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+@import "responsive.css";
 
 :root{
     --Color1:#c501e2;
@@ -9,3 +6,9 @@
     --Color3:#ffffff;
     --Color3:#c6c6c6;
 }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
