@@ -248,12 +248,42 @@ ul{
     cursor: pointer;
 }
 
+.btn:focus{
+    border: var(--Color1);
+}
 
 
+/* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+   +-              Table                 +- 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+*/
 
 
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0 auto;
+}
 
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
 
+th {
+    background-color: #ccc;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para a div de resultado */
+.resulttable {
+    text-align: center;
+    margin-top: 20px;
+}
 
 
 /* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
@@ -279,8 +309,3 @@ footer a:hover{
     font-size: 1.45rem;
     transition: all 0.2s ease-in;
 }
-
-
-/* .btn:hover, .btn:focus, .btn:active {
-    transform: translate(-50%, -10%);
-} */
