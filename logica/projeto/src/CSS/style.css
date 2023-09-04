@@ -1,9 +1,11 @@
 @import "responsive.css";
 
+
 /* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
    +-             Configs                +- 
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
 */
+
 
 :root{
     --Color1:#c501e2;
@@ -17,10 +19,11 @@
     padding: 0;
 }
 
-ul, li , a{
+ul, li , a, button{
     list-style: none;
     text-decoration: none;
     color: unset;
+    border: none;
 }
 
 body{
@@ -34,6 +37,7 @@ body{
     align-items: center;
     flex-direction: column;
 }
+
 
 /* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
    +-         Style Scrollbar            +- 
@@ -88,7 +92,6 @@ body{
 .container{
     display: none;
 }
-
 
 
 /* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
@@ -184,10 +187,9 @@ h1 {
     background-color: var(--Color1);  
 }
 
-.neon:focus {
+.neon:focus , .operation input{
     outline: none;
 }
-
 
 .make{
     margin-right: -2rem;
@@ -196,6 +198,53 @@ h1 {
     background-color: var(--Color4);
     margin-left: 3rem;
     font-size: 1.2em;
+    cursor: pointer;
+    
+}
+
+.operation input{
+    color: var(--Color1);
+    font-size: 1.2em;
+    background-color: transparent;
+    border: none;
+    width: 75%;
+    padding: 2rem;
+    text-align: center;
+}
+
+
+/* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+   +-              Choose                +- 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+*/
+
+
+.select{
+    flex-direction: row;
+    justify-content: space-around;
+    height: 13rem;
+    overflow: hidden;
+}
+
+.select h2{
+    font-size: 2.5em;
+}
+
+
+.var, .preposition, ul, .preposition div{
+    gap: 1.3rem;
+}
+
+ul{
+    display: flex;
+}
+
+.btn{
+    width: 4rem;
+    height: 2rem;
+    border-radius: 4px;
+    background-color: var(--Color2);
+    font-size: 1.5em;
     cursor: pointer;
 }
 
@@ -207,9 +256,31 @@ h1 {
 
 
 
+/* +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+   +-              Footer                +- 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+- 
+*/
 
-
-
-.btn:hover, .btn:focus, .btn:active {
-    transform: translate(-50%, -10%);
+footer{
+    width: 100vw;
+    height: 4rem;
+    background-color: var(--Color2);
+    bottom: 0;
+    font-size: 1.2em;
 }
+
+footer a{
+    font-size: 1.4rem;
+    transition: all 0.2s ease-out;
+}
+
+footer a:hover{
+    color: var(--Color4);
+    font-size: 1.45rem;
+    transition: all 0.2s ease-in;
+}
+
+
+/* .btn:hover, .btn:focus, .btn:active {
+    transform: translate(-50%, -10%);
+} */
