@@ -4,7 +4,7 @@ function loading() {
 }
 
 function newbutton() {
-    if (letter.charCodeAt(0) <= 'S'.charCodeAt(0)) {
+    if (letter.charCodeAt(0) <= 'Q'.charCodeAt(0)) {
         var btn = document.createElement("button");
         btn.textContent = letter;
         btn.className = "btn addelement";
@@ -21,7 +21,7 @@ function newbutton() {
         Swal.fire({
             position: 'center',
             icon: 'warning',
-            title: 'O limite de Variáveis é 4!',
+            title: 'O limite de Variáveis é 2!',
             showConfirmButton: false,
             color: '#c501e2',
             iconColor: '#c501e2',
@@ -42,9 +42,7 @@ function isempty() {
 }
 
 function newoperation() {
-    var btn = document.querySelectorAll(".addelement");    
-    var input = document.getElementById("operations");
-
+    var btn = document.querySelectorAll(".addelement");
 
     if (isempty()) {
             btn.forEach(function(botao) {
@@ -54,9 +52,7 @@ function newoperation() {
                 input.value += textoBotao;
             });
         });
-    } 
-
-    
+    }  
 }
 
 function verificaSeDuasLetrasConsecutivas(sequencia) {
@@ -64,13 +60,12 @@ function verificaSeDuasLetrasConsecutivas(sequencia) {
         var letraAtual = sequencia[i];
         var proximoCaractere = sequencia[i + 1];
 
-        // Verifique se a letra atual e o próximo caractere são letras
         var regexLetra = /[a-zA-Z]/;
         var letraAtualEhLetra = regexLetra.test(letraAtual);
         var proximoEhLetra = regexLetra.test(proximoCaractere);
 
         if (letraAtualEhLetra && proximoEhLetra) {
-            return true; // Duas letras consecutivas foram encontradas
+            return true;
         }
     }
 
@@ -82,13 +77,12 @@ function verificaDoisSimbolosConsecutivos(sequencia) {
         var caractereAtual = sequencia[i];
         var proximoCaractere = sequencia[i + 1];
 
-        // Verifique se o caractere atual e o próximo caractere são símbolos
         var regexSimbolo = /[⊕ʌᴠ→~↔]/;
         var caractereAtualEhSimbolo = regexSimbolo.test(caractereAtual);
         var proximoEhSimbolo = regexSimbolo.test(proximoCaractere);
 
         if (caractereAtualEhSimbolo && proximoEhSimbolo) {
-            return true; // Dois símbolos consecutivos foram encontrados
+            return true; 
         }
     }
 
@@ -96,8 +90,6 @@ function verificaDoisSimbolosConsecutivos(sequencia) {
 }
 
 function verificaSequencia(sequencia) {
-    // Adicione aqui a sua lógica de validação da sequência
-    // Por exemplo, você pode usar as funções verificaSeDuasLetrasConsecutivas e verificaDoisSimbolosConsecutivos mencionadas anteriormente
     if (verificaSeDuasLetrasConsecutivas(sequencia) || verificaDoisSimbolosConsecutivos(sequencia)) {
         return false;
     } else {
@@ -105,53 +97,92 @@ function verificaSequencia(sequencia) {
     }
 }
 
-function criarTabelaVerdade() {
-    var tabelaVerdadeHTML = '<table>' +
-        '<thead>' +
-        '<tr>' +
-        '<th>A</th>' +
-        '<th>B</th>' +
-        '<th>A AND B</th>' +
-        '<th>A OR B</th>' +
-        '<th>NOT A</th>' +
-        '</tr>' +
-        '</thead>' +
-        '<tbody>';
+function contarLetras() {
+    var input = document.getElementById("operations");
+    var sequencia = input.value;
+    
+    var regexLetras = /[a-zA-Z]/g;
+    var letrasEncontradas = sequencia.match(regexLetras);
 
-    for (var a = 0; a <= 1; a++) {
-        for (var b = 0; b <= 1; b++) {
-            tabelaVerdadeHTML += '<tr>' +
-                '<td>' + a + '</td>' +
-                '<td>' + b + '</td>' +
-                '<td>' + (a && b) + '</td>' +
-                '<td>' + (a || b) + '</td>' +
-                '<td>' + !a + '</td>' +
-                '</tr>';
+    if (letrasEncontradas) {
+        var letrasUnicas = new Set(letrasEncontradas);
+
+        var numeroDeLetrasUnicas = letrasUnicas.size;
+        return numeroDeLetrasUnicas;
+    };
+
+    return 0
+}
+
+function criarTabelaVerdade() {
+    var sequencia = document.getElementById("operations").value;
+    var numeroDeVariaveis = contarLetras();
+    var numeroDeLinhas = Math.pow(2, numeroDeVariaveis);
+    var tabelaHTML = '<table border="1">';
+
+    // Cabeçalho da tabela
+    tabelaHTML += '<tr>';
+    for (var i = 0; i < numeroDeVariaveis; i++) {
+        tabelaHTML += '<th>' + String.fromCharCode(65 + i) + '</th>';
+    }
+    tabelaHTML += '<th>'+sequencia+'</th>';
+    tabelaHTML += '</tr>';
+
+    // Geração das linhas da tabela verdade
+    for (var linha = 0; linha < numeroDeLinhas; linha++) {
+        var linhaBinaria = (linha).toString(2).padStart(numeroDeVariaveis, '0');
+        var entrada = {};
+
+        for (var i = 0; i < numeroDeVariaveis; i++) {
+            entrada[String.fromCharCode(65 + i)] = linhaBinaria[i] === '0' ? 'F' : 'V';
         }
+
+        var resultado = calcularExpressao(sequencia, entrada); 
+        resultado = resultado ? 'V' : 'F'; 
+        tabelaHTML += '<tr>';
+
+        for (var i = 0; i < numeroDeVariaveis; i++) {
+            tabelaHTML += '<td>' + entrada[String.fromCharCode(65 + i)] + '</td>';
+        }
+
+        tabelaHTML += '<td>' + resultado + '</td>';
+        tabelaHTML += '</tr>';
     }
 
-    tabelaVerdadeHTML += '</tbody>' +
-        '</table>';
+    tabelaHTML += '</table>';
 
-    // Insere a tabela verdade gerada na div com a classe "resulttable"
-    var resultTableDiv = document.querySelector(".resulttable");
-    resultTableDiv.innerHTML = tabelaVerdadeHTML;
+    document.getElementById("resulttable").innerHTML = tabelaHTML;
+}
+
+function calcularExpressao(expressao, entrada) {
+    if (expressao.includes('⊕')) {
+        return (entrada.A === 'V' && entrada.B === 'F') || (entrada.A === 'F' && entrada.B === 'V');
+    } else if (expressao.includes('ʌ')) {
+        return (entrada.A === 'V' && entrada.B === 'V');
+    } else if (expressao.includes('ᴠ')) {
+        return (entrada.A === 'V' || entrada.B === 'V');
+    } else if (expressao.includes('→')) {
+        return (entrada.A === 'V' && entrada.B === 'F') 
+    } else if (expressao.includes('~')) {
+        return entrada.A !== 'V';
+    } else if (expressao.includes('↔')) {
+        return (entrada.A === 'V' && entrada.B === 'V') || (entrada.A === 'F' && entrada.B === 'F');
+    } else {
+        return "Erro"
+    }
 }
 
 
 
-
 var letter = 'Q';
-
 newoperation();
-
 
 
 document.getElementById("addvar").addEventListener("click", newbutton);
 
 document.getElementById("make").addEventListener("click", function() {
     var sequencia = document.getElementById("operations").value;
-    
+
     if (!verificaSequencia(sequencia)) {
         Swal.fire({
             position: 'center',
@@ -163,8 +194,7 @@ document.getElementById("make").addEventListener("click", function() {
             background: '#19191a',
             timer: 2500
         });
-    }else{
+    } else {
         criarTabelaVerdade();
     }
-
 });
