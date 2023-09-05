@@ -4,7 +4,7 @@ function loading() {
 }
 
 function newbutton() {
-    if (letter.charCodeAt(0) <= 'Q'.charCodeAt(0)) {
+    if (letter.charCodeAt(0) <= 'R'.charCodeAt(0)) {
         var btn = document.createElement("button");
         btn.textContent = letter;
         btn.className = "btn addelement";
@@ -21,13 +21,21 @@ function newbutton() {
         Swal.fire({
             position: 'center',
             icon: 'warning',
-            title: 'O limite de Variáveis é 2!',
+            title: 'O limite de Variáveis é 3p!',
             showConfirmButton: false,
             color: '#c501e2',
             iconColor: '#c501e2',
             background: '#19191a',
             timer: 2500
         });
+    }
+}
+
+function deletenum() {
+    var input = document.getElementById("operations");
+    
+    if (input.value.length > 0) {
+        input.value = input.value.slice(0, -1);
     }
 }
 
@@ -100,7 +108,7 @@ function verificaSequencia(sequencia) {
 function contarLetras() {
     var input = document.getElementById("operations");
     var sequencia = input.value;
-    
+
     var regexLetras = /[a-zA-Z]/g;
     var letrasEncontradas = sequencia.match(regexLetras);
 
@@ -137,8 +145,11 @@ function criarTabelaVerdade() {
             entrada[String.fromCharCode(80 + i)] = linhaBinaria[i] === '0' ? 'F' : 'V';
         }
 
-        var resultado = calcularExpressao(sequencia, entrada); 
-        resultado = resultado ? 'V' : 'F'; 
+        var resultado = calcularExpressao(sequencia, entrada);
+        
+        // Converter true/false em V/F
+        resultado = resultado ? 'V' : 'F';
+        
         tabelaHTML += '<tr>';
 
         for (var i = 0; i < numeroDeVariaveis; i++) {
@@ -152,26 +163,84 @@ function criarTabelaVerdade() {
     tabelaHTML += '</table>';
 
     document.getElementById("resulttable").innerHTML = tabelaHTML;
-    document.getElementById("result").style.display = "block"
+    document.getElementById("result").style.display = "block";
 }
 
 function calcularExpressao(expressao, entrada) {
     if (expressao.includes('⊕')) {
-        return (entrada.P === 'V' && entrada.Q === 'F') || (entrada.P === 'F' && entrada.Q === 'V');
-    } else if (expressao.includes('ʌ')) {
-        return (entrada.P === 'V' && entrada.Q === 'V');
-    } else if (expressao.includes('ᴠ')) {
-        return (entrada.P === 'V' || entrada.Q === 'V');
-    } else if (expressao.includes('→')) {
-        return (entrada.P === 'V' && entrada.Q === 'F') 
-    } else if (expressao.includes('~')) {
+        if (contarLetras() === 2) {
+            return (entrada.P === 'V' && entrada.Q === 'F') || 
+            (entrada.P === 'F' && entrada.Q === 'V' )
+        } else {
+            (entrada.P === 'V' && entrada.Q === 'F' && entrada.R === 'F') ||
+            (entrada.P === 'F' && entrada.Q === 'V' && entrada.R === 'F') ||
+            (entrada.P === 'F' && entrada.Q === 'F' && entrada.R === 'V') ||
+            (entrada.P === 'V' && entrada.Q === 'V' && entrada.R === 'V');
+        }
+    } 
+    else if (expressao.includes('ʌ')) {
+        if (contarLetras() === 1) {
+            return (entrada.P === 'V' && entrada.P === 'V' )|| 
+            (entrada.Q === 'V' && entrada.Q === 'V' )|| 
+            (entrada.R === 'V' && entrada.R === 'V' );
+        } else if(contarLetras() === 2) {
+            return (entrada.P === 'V' && entrada.Q === 'V' );
+
+        }else{
+            return (entrada.P === 'V' && entrada.Q === 'V' && entrada.R === 'V');
+        }    
+    } 
+    else if (expressao.includes('ᴠ')) {
+        if (contarLetras() === 1) {
+            return (entrada.P === 'V' || entrada.P === 'V' )|| 
+            (entrada.Q === 'V' || entrada.Q === 'V' )|| 
+            (entrada.R === 'V' || entrada.R === 'V' );
+        } else if(contarLetras() === 2){
+            return (entrada.P === 'V' || entrada.Q === 'V' )
+        }else{
+            return (entrada.P === 'V' || entrada.Q === 'V' || entrada.R === 'V');
+        }
+
+    } 
+    else if (expressao.includes('→')) {
+        if (contarLetras() === 1) {
+            
+        } 
+        else if(contarLetras() === 2) {
+            return !(entrada.P === 'V' && entrada.Q === 'F');
+            
+        }
+        else{
+            return (entrada.P === 'V' && entrada.Q === 'F' && entrada.R === 'F')
+
+        }
+
+    } 
+    else if (expressao.includes('~')) {
         return entrada.P !== 'V';
-    } else if (expressao.includes('↔')) {
-        return (entrada.P === 'V' && entrada.Q === 'V') || (entrada.P === 'F' && entrada.Q === 'F');
-    } else {
-        return "Erro"
+
+    } 
+    else if (expressao.includes('↔')) {
+        if (contarLetras() === 1) {
+            return ((entrada.P === 'V' && entrada.P === 'V') || (entrada.P === 'F' && entrada.P === 'F')) ||
+                ((entrada.Q === 'V' && entrada.Q === 'V') || (entrada.Q === 'F' && entrada.Q === 'F') ) ||
+                ((entrada.R === 'V' && entrada.R === 'V') || (entrada.R === 'F' && entrada.R === 'F'));
+        } else if(contarLetras() === 2){
+            return (entrada.P === 'V' && entrada.Q === 'V' ) ||
+                (entrada.P === 'F' && entrada.Q === 'F' );
+
+        }else{
+            return (entrada.P === 'V' && entrada.Q === 'V' && entrada.R === 'V') ||
+            (entrada.P === 'F' && entrada.Q === 'F' && entrada.R === 'F');
+        }
+        
+    } 
+    else {
+        return "Erro";
     }
 }
+
+
 
 var letter = 'Q';
 newoperation();
@@ -194,5 +263,22 @@ document.getElementById("make").addEventListener("click", function() {
         });
     } else {
         criarTabelaVerdade();
+    }
+});
+
+document.getElementById("delete").addEventListener("click", function() {
+    if (isempty()) {
+        Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'Não tem o que apagar meu filho(a)!',
+            showConfirmButton: false,
+            color: '#c501e2',
+            iconColor: '#c501e2',
+            background: '#19191a',
+            timer: 2500
+        });
+    } else {
+        deletenum()
     }
 });
