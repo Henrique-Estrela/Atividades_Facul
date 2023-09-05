@@ -109,23 +109,23 @@ function contarLetras() {
 
         var numeroDeLetrasUnicas = letrasUnicas.size;
         return numeroDeLetrasUnicas;
-    };
+    }
 
-    return 0
+    return 0;
 }
 
 function criarTabelaVerdade() {
     var sequencia = document.getElementById("operations").value;
     var numeroDeVariaveis = contarLetras();
     var numeroDeLinhas = Math.pow(2, numeroDeVariaveis);
-    var tabelaHTML = '<table border="1">';
+    var tabelaHTML = '<table>';
 
     // Cabeçalho da tabela
     tabelaHTML += '<tr>';
     for (var i = 0; i < numeroDeVariaveis; i++) {
-        tabelaHTML += '<th>' + String.fromCharCode(65 + i) + '</th>';
+        tabelaHTML += '<th>' + String.fromCharCode(80 + i) + '</th>';
     }
-    tabelaHTML += '<th>'+sequencia+'</th>';
+    tabelaHTML += '<th>' + sequencia + '</th>';
     tabelaHTML += '</tr>';
 
     // Geração das linhas da tabela verdade
@@ -134,7 +134,7 @@ function criarTabelaVerdade() {
         var entrada = {};
 
         for (var i = 0; i < numeroDeVariaveis; i++) {
-            entrada[String.fromCharCode(65 + i)] = linhaBinaria[i] === '0' ? 'F' : 'V';
+            entrada[String.fromCharCode(80 + i)] = linhaBinaria[i] === '0' ? 'F' : 'V';
         }
 
         var resultado = calcularExpressao(sequencia, entrada); 
@@ -142,7 +142,7 @@ function criarTabelaVerdade() {
         tabelaHTML += '<tr>';
 
         for (var i = 0; i < numeroDeVariaveis; i++) {
-            tabelaHTML += '<td>' + entrada[String.fromCharCode(65 + i)] + '</td>';
+            tabelaHTML += '<td>' + entrada[String.fromCharCode(80 + i)] + '</td>';
         }
 
         tabelaHTML += '<td>' + resultado + '</td>';
@@ -152,38 +152,36 @@ function criarTabelaVerdade() {
     tabelaHTML += '</table>';
 
     document.getElementById("resulttable").innerHTML = tabelaHTML;
+    document.getElementById("result").style.display = "block"
 }
 
 function calcularExpressao(expressao, entrada) {
     if (expressao.includes('⊕')) {
-        return (entrada.A === 'V' && entrada.B === 'F') || (entrada.A === 'F' && entrada.B === 'V');
+        return (entrada.P === 'V' && entrada.Q === 'F') || (entrada.P === 'F' && entrada.Q === 'V');
     } else if (expressao.includes('ʌ')) {
-        return (entrada.A === 'V' && entrada.B === 'V');
+        return (entrada.P === 'V' && entrada.Q === 'V');
     } else if (expressao.includes('ᴠ')) {
-        return (entrada.A === 'V' || entrada.B === 'V');
+        return (entrada.P === 'V' || entrada.Q === 'V');
     } else if (expressao.includes('→')) {
-        return (entrada.A === 'V' && entrada.B === 'F') 
+        return (entrada.P === 'V' && entrada.Q === 'F') 
     } else if (expressao.includes('~')) {
-        return entrada.A !== 'V';
+        return entrada.P !== 'V';
     } else if (expressao.includes('↔')) {
-        return (entrada.A === 'V' && entrada.B === 'V') || (entrada.A === 'F' && entrada.B === 'F');
+        return (entrada.P === 'V' && entrada.Q === 'V') || (entrada.P === 'F' && entrada.Q === 'F');
     } else {
         return "Erro"
     }
 }
 
-
-
 var letter = 'Q';
 newoperation();
-
 
 document.getElementById("addvar").addEventListener("click", newbutton);
 
 document.getElementById("make").addEventListener("click", function() {
     var sequencia = document.getElementById("operations").value;
 
-    if (!verificaSequencia(sequencia)) {
+    if (!verificaSequencia(sequencia) || isempty()) {
         Swal.fire({
             position: 'center',
             icon: 'warning',
