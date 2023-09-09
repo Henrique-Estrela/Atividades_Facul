@@ -1,0 +1,15 @@
+@media (max-width: 800px) {
+    .select {
+        flex-direction: column;
+        justify-content: space-around;
+        height: auto; 
+        gap: 4rem;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 650px) {
+   h1{
+    font-size: 3em;
+   }
+}
