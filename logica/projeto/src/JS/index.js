@@ -142,7 +142,7 @@ function criarTabelaVerdade() {
         var entrada = {};
 
         for (var i = 0; i < numeroDeVariaveis; i++) {
-            entrada[String.fromCharCode(80 + i)] = linhaBinaria[i] === '0' ? 'F' : 'V';
+            entrada[String.fromCharCode(80 + i)] = linhaBinaria[i] === '0' ? 'V' : 'F';
         }
 
         var resultado = calcularExpressao(sequencia, entrada);
@@ -168,14 +168,14 @@ function criarTabelaVerdade() {
 
 function calcularExpressao(expressao, entrada) {
     if (expressao.includes('⊕')) {
-        if (contarLetras() === 2) {
+        if (contarLetras() <= 2) {
             return (entrada.P === 'V' && entrada.Q === 'F') || 
             (entrada.P === 'F' && entrada.Q === 'V' )
         } else {
-            (entrada.P === 'V' && entrada.Q === 'F' && entrada.R === 'F') ||
-            (entrada.P === 'F' && entrada.Q === 'V' && entrada.R === 'F') ||
-            (entrada.P === 'F' && entrada.Q === 'F' && entrada.R === 'V') ||
-            (entrada.P === 'V' && entrada.Q === 'V' && entrada.R === 'V');
+            return (entrada.P === 'F' && entrada.Q === 'F' && entrada.R === 'F') ||
+            (entrada.P === 'F' && entrada.Q === 'V' && entrada.R === 'V') ||
+            (entrada.P === 'V' && entrada.Q === 'F' && entrada.R === 'V') ||
+            (entrada.P === 'V' && entrada.Q === 'V' && entrada.R === 'F');
         }
     } 
     else if (expressao.includes('ʌ')) {
@@ -211,7 +211,12 @@ function calcularExpressao(expressao, entrada) {
             
         }
         else{
-            return (entrada.P === 'V' && entrada.Q === 'F' && entrada.R === 'F')
+            return (entrada.P === 'V' && entrada.Q === 'F' && entrada.R === 'F') ||
+            (entrada.P === 'V' && entrada.Q === 'V' && entrada.R === 'V') ||
+            (entrada.P === 'F' && entrada.Q === 'F' && entrada.R === 'F') ||
+            (entrada.P === 'V' && entrada.Q === 'F' && entrada.R === 'V') ||
+            (entrada.P === 'F' && entrada.Q === 'F' && entrada.R === 'V') ||
+            (entrada.P === 'F' && entrada.Q === 'V' && entrada.R === 'V')
 
         }
 
@@ -239,7 +244,6 @@ function calcularExpressao(expressao, entrada) {
         return "Erro";
     }
 }
-
 
 
 var letter = 'Q';
