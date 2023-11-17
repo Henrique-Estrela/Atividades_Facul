@@ -163,6 +163,9 @@ img.lamp, select{
     border-radius: 1rem; 
     transition: transform .2s;
 }
+#seta{
+    transition: all .2s;
+}
 select{
     width: 5rem;
     height: 5rem;
@@ -182,4 +185,18 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 950px) {
+    div.pratica div.row{
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        transition: all .2s;
+
+    }
+    img#seta{
+        transform: rotate(90deg);
+        transition: all .2s;
+    }
 }
