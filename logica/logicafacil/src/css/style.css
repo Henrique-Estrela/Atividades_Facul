@@ -51,6 +51,9 @@ z-index: 10;
     gap: 1.5rem;
 
 }
+.navbar-toggler{    
+    margin-right: 1rem !important;
+}
 
 div.container-fluid{
     margin-left: 1rem !important;
