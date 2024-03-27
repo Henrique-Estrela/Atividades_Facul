@@ -1,9 +1,10 @@
 :root{
-    --color1: #e8ddcb;
-    --color2: #cdb380;
-    --color3: #036564;
-    --color4: #033649;
-    --color5: #031634;
+    --color1: #ffffff;
+    --color2: #F8F8EC;
+    --color3: #6ce441b0;
+    --color4: #1B9D10;
+    --color5: #1ed221f4;
+    --color6: #3A3A3A;
 }
 
 *{
@@ -19,12 +20,11 @@
 
 ::-webkit-scrollbar{
     background-color: var(--color1);
-    width: 10px;
+    width: 6px;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: #031634;
+    background-color: var(--color4);
     border-radius: 10px;
-
 }
 
 
@@ -38,18 +38,20 @@ z-index: 100;
 }
 .nav2 {
     display: flex;
-    justify-content: center;
-    font-size: 1.2em;
-    background-color: var(--color1) !important;
+    justify-content: end;
+    font-size: 1.4em;
     z-index: -1;
     border-radius: 10px;
     position: relative;
-    margin-left: -1rem !important;
-    margin-top: -1rem !important;
 }
-.nav2 ul{
-    gap: 1.5rem;
 
+
+.nav2 ul{
+    gap: 2rem;
+
+}
+.nav2 ul li a{
+    color: var(--color4);
 }
 .navbar-toggler{    
     margin-right: 1rem !important;
@@ -77,19 +79,22 @@ a span.title{
 
 .container1{
     background-color: var(--color3) !important;
-    color: var(--color1) !important;
+    color: var(--color6) !important;
     height: auto;
-    padding: 5rem !important;
 }
 
 .container2{
-    background-color: var(--color1) !important;
-    color: var(--color3) !important;
+    background-color: var(--color2) !important;
+    color: var(--color6) !important;
     height: auto;
-    padding: 5rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
 }
 
-.text, .image{
+.img-section img{
+    width: 80%;
+}
+.text, .image, .img-section{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,12 +132,16 @@ ol li{
     margin: 1rem !important;
     border-radius: 1rem; 
 }
-.card-conectivo{
+.assunto div.text{
+    height: 8rem;
+}
+
+.card-conectivo{   
     margin: 2rem;
-    background-color: #fff;
+    background-color: var(--color3);
     text-align: center;
     border: none;
-    width: 90%;
+    width: 80%;
     height: 90%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.269);
     transition: all 0.5s;
@@ -190,12 +199,13 @@ footer{
     width: auto;
     height: 6rem;
     background-color: var(--color1);
-    color: var(--color3);
+    color: var(--color6);
     font-size: 1.5em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 @media (max-width: 300px) {
     .text h1 {
         text-align: center;
