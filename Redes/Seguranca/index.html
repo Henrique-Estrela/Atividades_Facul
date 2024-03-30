@@ -9,6 +9,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/glitch.css">
+
 
     <!-- JS -->
     <script src="src/js/index.js" defer></script>
@@ -16,6 +18,11 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Rubik+Glitch&display=swap" rel="stylesheet">
 
     <!-- Title -->
     <title>Segurança Mobile</title>
@@ -25,17 +32,21 @@
     <header>
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img src="src/img/icon.png" alt="Logo" class="logo d-inline-block align-text-top">
-                <span class="title">Segurança Facil</span>
-              </a>
+                <div>
+                 <a class="navbar-brand" href="#">
+                    <img src="src/img/icon.png" alt="Logo" class="logo d-inline-block align-text-top">
+                    <span class="title">Segurança Facil</span>
+                </a>   
+                </div>
+              
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+              
               <div class="nav2 collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#protecao">Proteção</a>
+                    <a class="nav-link" href="#protecao">Proteção</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#redespublicas">Redes Públicas</a>
@@ -50,16 +61,26 @@
         </nav>
     </header>
 
-    <section class="container-fluid container2">
+    <section id="protecao" class="container-fluid container2">
         <div class="row ">
-            <div class="col-md-6">
-                <h1 class="title">O que Lógica Proposicional?</h1>
+            <div class="col-md-6 text">
+              
+                <h1 class="title hero glitch layers" data-text="Navegando com Segurança: ">
+                    <span>Navegando com Segurança:</span>
+                </h1>
+                
+                <h3 class="title hero glitch layers" data-text="Proteção de Dispositivos Móveis contra Ameaças Digitais">
+                    <span>Proteção de Dispositivos Móveis contra Ameaças Digitais</span> 
+                </h3>
+                
                 <div class="assunto">
-                    <p>A lógica proposicional é uma parte importante da lógica que estuda afirmações que podem ser verdadeiras ou falsas, mas não ambas. Ela usa regras e símbolos para analisar raciocínios, onde conclusões são tiradas de premissas usando regras lógicas.</p>
-                    <p>A lógica proposicional é usada em muitas áreas, como ciência da computação, matemática e filosofia. Ela é essencial na criação de algoritmos, programação de computadores e na análise de argumentos filosóficos. Entender esses princípios dá às pessoas as ferramentas para criar argumentos válidos, analisar declarações e resolver problemas que envolvem informações verdadeiras e falsas.</p>
+                    <p>No mundo digital atual, nossos dispositivos móveis armazenam informações pessoais valiosas, mas estão sujeitos a ameaças cibernéticas.</p>
+
+                    <p>Protegê-los é essencial para garantir a segurança dos dados e privacidade. Esta cartilha oferece orientações práticas para manter suas informações seguras.</p>
                 </div>
             </div>
-            <div class="col-md-6">
+
+            <div class="col-md-6 img-section">
                 <div class="img-section">
                     <img src="src/img/Mobile encryption-amico 1.png" alt="" srcset="">
                 </div>
@@ -138,7 +159,7 @@
         </div>
     </section>
 
-    <section class="container-fluid container1">
+    <section id="redespublicas" class="container-fluid container1">
         <div class="row ">
             <div class="col-md-6">
                 <h1 class="title">O que Lógica Proposicional?</h1>
@@ -190,7 +211,7 @@
         </div>
     </section>
 
-    <section class="container-fluid container2">
+    <section id="phishing" class="container-fluid container2">
         <div class="row ">
             <div class="col-md-6">
                 <div class="img-section">

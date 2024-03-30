@@ -6,17 +6,28 @@
     --color5: #1ed221f4;
     --color6: #3A3A3A;
 }
+.hammersmith-one-regular {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.rubik-glitch-regular {
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+  
 
 *{
     margin: 0 !important;
     padding: 0 !important;
-    font-family:'Times New Roman', Times, serif;
 }
+
 ::selection{
     background: var(--color4);
     color: var(--color1);
 }
-
 
 ::-webkit-scrollbar{
     background-color: var(--color1);
@@ -36,11 +47,11 @@ header nav{
 -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.30);
 z-index: 100;
 }
+
 .nav2 {
     display: flex;
     justify-content: end;
     font-size: 1.4em;
-    z-index: -1;
     border-radius: 10px;
     position: relative;
 }
@@ -48,11 +59,13 @@ z-index: 100;
 
 .nav2 ul{
     gap: 2rem;
-
 }
+
 .nav2 ul li a{
+    cursor: pointer !important;
     color: var(--color4);
 }
+
 .navbar-toggler{    
     margin-right: 1rem !important;
 }
@@ -66,15 +79,17 @@ a.navbar-brand{
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-left: 1rem;
-
+    margin-left: 1rem
 }
+
 a img.logo{
     border-radius: 1rem;
     width: 4rem;
 }
+
 a span.title{
     font-size: 2rem;
+    font-weight: 500
 }
 
 .container1{
@@ -92,40 +107,50 @@ a span.title{
 }
 
 .img-section img{
-    width: 80%;
+    width: 90%;
 }
+
 .text, .image, .img-section{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 p span{
     color: var(--color5);
 }
+
 ul{
     margin: 2rem !important;
 }
+
 li{
     color: var(--color4);
     font-size: 1.3em;
-}
-ol li{
-    color: var(--color1);
-    font-size: 1.6em;
-    margin-bottom: 0.5rem !important;
-}
-
-.text h1{
-    text-align: center;
-    font-size: 4em;
     font-weight: 700;
 }
 
+
+h1, h2, h3{
+    text-align: left !important;
+    font-family: "Rubik Glitch", system-ui;
+    color: var(--color4);
+    font-size: 5em !important;
+    padding-left: 3rem !important;
+
+    font-weight: 700;
+}
+
+h3{
+    font-size: 2em !important;
+}
+
+
 .text p{
-    margin-top: 3rem !important;
-    margin-bottom: 2rem !important;
-    font-size: 1.5em;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    font-size: 1.2em;
 }
 .assunto img{
     width: 60vw;
@@ -162,7 +187,9 @@ ol li{
     justify-content: center;
 }
 .assunto{
-    margin-top: 3rem !important;
+    margin-top: 2rem !important;
+    padding-left: 5rem !important;
+    font-weight: 700;
 }
 
 .conectivo-body{
