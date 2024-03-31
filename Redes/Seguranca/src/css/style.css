@@ -106,6 +106,10 @@ a span.title{
     padding-bottom: 2rem !important;
 }
 
+.container1 h2{
+    color: #fff;
+}
+
 .img-section img{
     width: 90%;
 }
@@ -137,13 +141,21 @@ h1, h2, h3{
     font-family: "Rubik Glitch", system-ui;
     color: var(--color4);
     font-size: 5em !important;
-    padding-left: 3rem !important;
-
     font-weight: 700;
+}
+
+h1, h3{
+    padding-left: 3rem !important;
 }
 
 h3{
     font-size: 2em !important;
+}
+
+h2{
+    font-size: 3em !important;
+    text-align: center !important;
+
 }
 
 
@@ -152,16 +164,21 @@ h3{
     margin-bottom: 1rem !important;
     font-size: 1.2em;
 }
-.assunto img{
-    width: 60vw;
-    margin: 1rem !important;
-    border-radius: 1rem; 
-}
+
+
+
 .assunto div.text{
     height: 8rem;
 }
 
-.card-conectivo{   
+.prevenir{
+    height: 65vh;
+}
+.prevenir div.assunto{
+    margin-top: 4rem !important;
+}
+.card-conectivo{  
+    display: flex; 
     margin: 2rem;
     background-color: var(--color3);
     text-align: center;
@@ -181,7 +198,7 @@ h3{
 .card-conectivo p.conectivo3{
     font-size: 0.8em;
 }
-.center{
+.center, .conectivo-body{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,31 +211,34 @@ h3{
 
 .conectivo-body{
     padding: 1rem !important;
+    flex-direction: row;
+
 }
 .pratica{
     margin-top: 3rem !important;
 }
-img.lamp, select{
-    margin: 2rem;
-    background-color: #fff;
-    text-align: center;
-    border: none;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.269);
-    transition: all 0.5s;
-    color: var(--color3);
-    border-radius: 1rem; 
-    transition: transform .2s;
+
+div.icon img{
+    width: 3rem;
 }
-#seta{
-    transition: all .2s;
+
+.text p.text-prevenir{
+    margin-top: unset !important;
+    margin-bottom: unset !important;
+    color: var(--color6);
+    font-size: 1em;
+    text-align: left;
+    margin-left: 12px !important;
 }
+
+
+
 select{
     width: 5rem;
     height: 5rem;
    font-size: 1.5em !important;
    -webkit-appearance: none;
    -moz-appearance: none;
-   
 }
 
 
