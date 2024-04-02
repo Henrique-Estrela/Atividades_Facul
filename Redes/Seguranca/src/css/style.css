@@ -114,7 +114,7 @@ a span.title{
     width: 90%;
 }
 
-.text, .image, .img-section{
+.text, .image, .img-section, .container1 .col-md-6, .container2 .col-md-6{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,6 +154,7 @@ h3{
 
 h2{
     font-size: 3em !important;
+    z-index: 1 ;
     text-align: center !important;
 
 }
@@ -231,7 +232,9 @@ div.icon img{
     margin-left: 12px !important;
 }
 
-
+li.listlass{
+    display: flex;
+}
 
 select{
     width: 5rem;

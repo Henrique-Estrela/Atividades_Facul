@@ -3,6 +3,9 @@
     color: #1B9D10;
     filter: drop-shadow(12px 12px 13px #000000);
     font-family: "Rubik Glitch", system-ui;
+    z-index: 2;
+    letter-spacing: 2px;
+
 }
     
   
