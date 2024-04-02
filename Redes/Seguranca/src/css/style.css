@@ -281,9 +281,7 @@ footer{
 }
 
 @media (max-width: 500px) {
-    .text h1 {
-        font-size: 2.5em;
-    }
+   
 
     .text p {
         font-size: 1em;
@@ -297,6 +295,7 @@ footer{
     font-size: 1em;
 
     }
+    
 }
 
 @media (max-width: 950px) {
@@ -310,5 +309,13 @@ footer{
     img#seta{
         transform: rotate(90deg);
         transition: all .2s;
+    }
+
+    .container2, .container1{
+        height: auto;
+    }
+
+    .text h1{
+        font-size: 3.5em !important;
     }
 }
