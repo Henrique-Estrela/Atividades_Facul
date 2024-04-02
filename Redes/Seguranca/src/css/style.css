@@ -248,13 +248,7 @@ li.list{
     align-items: center;
     padding: 1rem !important;
 }
-select{
-    width: 5rem;
-    height: 5rem;
-   font-size: 1.5em !important;
-   -webkit-appearance: none;
-   -moz-appearance: none;
-}
+
 
 
 footer{
