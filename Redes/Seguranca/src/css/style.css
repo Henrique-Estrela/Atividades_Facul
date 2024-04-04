@@ -291,6 +291,18 @@ footer{
     }
     
 }
+@media (max-width: 991px) {
+    .nav2{
+        background-color: #ffffffd2;
+        justify-content: center;
+        z-index: -1;
+        width: 100%;
+    }
+    
+    div.container-fluid .nav2{
+        margin-left: -1rem !important;
+    }
+}
 
 @media (max-width: 950px) {
     div.pratica div.row{
