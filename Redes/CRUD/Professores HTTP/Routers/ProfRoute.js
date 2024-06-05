@@ -46,16 +46,16 @@ router.put('/professores/att/:id', async (req, res) => {
     try{
         // Atualiza as informações do professor com os dados fornecidos no corpo da requisição
         const info = await Info.findByIdAndUpdate(id, req.body);
-        // Se o professor não for encontrado, retorna um status 500 com uma mensagem de erro
+        // Se o professor não for encontrado, retorna um status 404 com uma mensagem de erro
         if(!info){
-            return res.status(500).json({ message: 'Professor não encontrado' });
+            return res.status(404).json({ message: 'Professor não encontrado' });
         }
         // Busca novamente as informações atualizadas do professor pelo ID
         const infoatt = await Info.findById(id);
         res.status(200).json(infoatt);
     }
     catch(error){
-        res.status(404).json({ message: error.message });
+        res.status(500).json({ message: error.message });
     }
 });
 
